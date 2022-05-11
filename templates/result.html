@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{%block title%}
+ Result 
+{%endblock title%}
+ 
+{% block body %}
+ 
+ {% comment %} resutl starts {% endcomment %}
+ <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            
+            <button type="button" class="btn btn-danger">Result </button>
+            <div class="panel-body">
+                <h3>{{poll.question}} </h3>
+            </div>
+
+            <ul class="list-group">
+                {% comment %} <li class="list-group-item">{{ poll.option_one }} &mdash; <strong>{{ poll.option_one_count }}</strong></li>
+                <li class="list-group-item">{{ poll.option_two }} &mdash; <strong>{{ poll.option_two_count }}</strong></li>
+                <li class="list-group-item">{{ poll.option_three }} &mdash; <strong>{{ poll.option_three_count }}</strong></li>
+            {% endcomment %}
+                <li class="list-group-item"> {{poll.question_one}} &mdash; <strong>{{poll.question_one_count}}</strong></li>
+                <li class="list-group-item"> {{poll.question_two}} &mdash; <strong>{{poll.question_two_count}}</strong></li>
+                <li class="list-group-item"> {{poll.question_three}} &mdash; <strong>{{poll.question_three_count}}</strong></li>
+            </ul>
+
+            
+        </div>
+    </div>
+</div>
+ {% comment %} result end  {% endcomment %}
+ <a href="/home">
+    <button type="submit" class="btn btn-primary mb-2" >Next</button>
+ </a>
+{% endblock body%}

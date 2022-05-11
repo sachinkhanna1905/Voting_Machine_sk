@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{%block title%}
+ Vote
+{%endblock title%}
+ 
+{% block body %}
+ 
+  {% comment %} voting starts {% endcomment %}
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        {% comment %} <h2>{{ poll.question }}</h2> {% endcomment %}
+                        <h2>{{poll.question}}</h2>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-lg-12">
+                        <hr />
+            
+                        <form method="POST" action=" {% url 'Result' poll.id %} ">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="poll" value="option1">
+                                        {% comment %} {{ poll.option_one }} {% endcomment %}
+                                        {{poll.question_one}}
+                                    </label> &nbsp;<br>
+                                    <label>
+                                        <input type="radio" name="poll" value="option2">
+                                        {% comment %} {{ poll.option_two }} {% endcomment %}
+                                        {{poll.question_two}}
+                                    </label> &nbsp;<br>
+                                    <label>
+                                        <input type="radio" name="poll" value="option3">
+                                        {% comment %} {{ poll.option_three }} {% endcomment %}
+                                        {{poll.question_three}}
+                                    </label> &nbsp;
+                                    {% comment %} option four can be here but we have not created option four in Schema  {% endcomment %}
+                                </div>
+                            </div>
+            
+                            <hr />
+            
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+  {% comment %} voting ends  {% endcomment %}
+ <a href="{% url 'Result' poll.id %}">
+    <button type="submit" class="btn btn-primary mb-2" >Submit</button>
+ </a>
+ 
+{% endblock body%}

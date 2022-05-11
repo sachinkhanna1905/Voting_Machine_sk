@@ -1,0 +1,16 @@
+{1}. creating models -> {2}migration -> {3}migrate -> {4}registration of Models in app admin.py -> 
+{5}registration of App in setting .  install_app Poll_App.apps.PollAppConfig ->
+   {6}check migrations ( 
+    Migrations for 'Poll_App':
+  Poll_App\migrations\0001_initial.py
+    - Create model Poll
+PS C:\Users\USER\Desktop\Poll_Project>
+)   ->
+{7} check migrate(
+    Operations to perform:
+  Apply all migrations: Poll_App, admin, auth, contenttypes, sessions
+  Running migrations:
+  Applying Poll_App.0001_initial... OK
+PS C:\Users\USER\Desktop\Poll_Project>
+) 
+{8} making a form to store "create poll input data " in app for this make a file forms.py or create a model form 

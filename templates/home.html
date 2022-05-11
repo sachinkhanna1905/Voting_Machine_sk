@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{%block title%}
+Home Page
+{%endblock title%}
+
+{% block body %}
+{% comment %} <h3><strong> Django Voting Applicaiton</strong></h3> {% endcomment %}
+<a class="navbar-brand" href="#"><h2> Django Voting Applicaiton </h2></a>
+
+<div class="list-group">
+    {% for poll in polls %}
+    {% comment %} <a href=" {% url 'vote' question.id %} " class="list-group-item list-group-item-action"> {% endcomment %}
+        <a href="{% url 'Vote' poll.id %}" class="list-group-item list-group-item-action">
+            <h5><Strong>{{ poll.question}}</Strong></h5></a>
+        {% comment %} <h5>{{question.question}}</h5></a> {% endcomment %}
+   {% endfor %}
+    
+</div>
+{% endblock body%}
